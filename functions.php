@@ -1,7 +1,7 @@
 <?php
 //ADDING JS AND CSS FILES
 //--------------------------------------------------
-function adding_scripts() {
+function ox_adding_scripts() {
 	if (!function_exists('is_login_page')) {
 		function is_login_page() {
 			return !strncmp($_SERVER['REQUEST_URI'], '/wp-login.php', strlen('/wp-login.php'));
@@ -20,6 +20,10 @@ function adding_scripts() {
 		
 		/*slicknav menu*/
 		wp_enqueue_script('slicknav', get_template_directory_uri() . '/js/jquery.slicknav.min.js', array('jquery'), '', true );
+		
+		/*bxslider*/
+		wp_enqueue_style( 'bxslider', get_template_directory_uri() . '/css/jquery.bxslider.min.css');
+		wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), '', true);
 				
 		/*zopim chat*/
 		wp_enqueue_script('zopim', get_template_directory_uri() . '/js/zopimClear.js', array('jquery'), '', true );
@@ -32,7 +36,7 @@ function adding_scripts() {
 	}
 }
 
-add_action( 'wp_enqueue_scripts', 'adding_scripts' );
+add_action( 'wp_enqueue_scripts', 'ox_adding_scripts' );
 
 //REWOVE SOME META TAGS AND UNNECESSARY LINKS
 //--------------------------------------------------
@@ -75,14 +79,14 @@ register_sidebar(array(
 //--------------------------------------------------
 // custom excerpt length
 function ox_custom_excerpt_length( $length ) {
-	return 25;
+	return 50;
 }
 add_filter( 'excerpt_length', 'ox_custom_excerpt_length', 999 );
 
 // add more link to excerpt
 function ox_custom_excerpt_more($more) {
 	global $post;
-	return '... <div class="more-btn-wrap"><a class="more-link" href="'. get_permalink($post->ID) . '">'.'Read More' .'</a></div>';
+	return '... <div class="more-btn-wrap"><a class="btn btn-default big-dark-btn more-link" href="'. get_permalink($post->ID) . '">'.'Read More' .'</a></div>';
 }
 add_filter('excerpt_more', 'ox_custom_excerpt_more');
 
@@ -91,40 +95,4 @@ add_filter('excerpt_more', 'ox_custom_excerpt_more');
 //--------------------------------------------------
 add_theme_support('post-thumbnails');
 set_post_thumbnail_size(180, 180, true);
-*/
-
-
-/*
-//ADDING MOBILE ORDERFORM
-//--------------------------------------------------
-include_once 'MobileDetect.php';
-
-$mobileDetect = new Mobile_Detect();
-
-if((!$mobileDetect->isMobile() && !$mobileDetect->isTablet()) && strpos($_SERVER['REQUEST_URI'], "ordermobile") !== false){
-	header("Location: " . str_replace("ordermobile", "order", $_SERVER['REQUEST_URI']));
-	exit();
-}elseif(($mobileDetect->isMobile() || $mobileDetect->isTablet()) && (strpos($_SERVER['REQUEST_URI'], "/order") !== false && strpos($_SERVER['REQUEST_URI'], "mobile") === false)){
-	$_SERVER['REQUEST_URI'] = str_replace("//", "/", $_SERVER['REQUEST_URI']);
-	header("Location: " .  str_replace("order", "ordermobile", $_SERVER['REQUEST_URI']));
-	exit();
-}
-*/
-
-
-/*
-//ADDING MOBILE ORDERFORM - DE
-//--------------------------------------------------
-include_once 'MobileDetect.php';
-
-$mobileDetect = new Mobile_Detect();
-
-if((!$mobileDetect->isMobile() && !$mobileDetect->isTablet()) && strpos($_SERVER['REQUEST_URI'], "mformular") !== false){
-	header("Location: " . str_replace("mformular", "formular", $_SERVER['REQUEST_URI']));
-	exit();
-}elseif(($mobileDetect->isMobile() || $mobileDetect->isTablet()) && (strpos($_SERVER['REQUEST_URI'], "/formular") !== false && strpos($_SERVER['REQUEST_URI'], "mobile") === false)){
-	$_SERVER['REQUEST_URI'] = str_replace("//", "/", $_SERVER['REQUEST_URI']);
-	header("Location: " .  str_replace("formular", "mformular", $_SERVER['REQUEST_URI']));
-	exit();
-}
 */

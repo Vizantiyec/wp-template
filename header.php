@@ -26,16 +26,16 @@
 	<body <?php body_class(); ?>>
 
 		<!--HEADER-->
-		<header class="header">
+		<header class="header" id="header">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-6">
+					<div class="col-md-6">
 						<div class="logo">
-							<a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="logo"/>Logotype</a>
+							<a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="logo"/><?php bloginfo('name'); ?></a>
 						</div>
 					</div>
 
-					<div class="col-sm-6 text-right">
+					<div class="col-md-6 text-right">
 						<div class="phone-header">
 							<img src="<?php bloginfo('template_url'); ?>/img/phone-header.png" alt="">
 						</div>
@@ -46,7 +46,10 @@
 					<?php
 						$nav_args = array(
 							'theme_location'	=> 'nav',
-							'container'			=> ''
+							'container'			=> '',
+							'link_before'		=> '<span class="link-title">',
+							'link_after'		=> '</span>',
+							'depth'				=> 1
 						);
 						wp_nav_menu( $nav_args );
 					?>
