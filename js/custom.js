@@ -28,6 +28,7 @@ $('#bxslider').bxSlider({
 	//pager: false,
 	auto: true,
 	mode: 'fade',
+	adaptiveHeight: true,
 	pause: 10000
 });
 

@@ -36,7 +36,7 @@
 					</div>
 
 					<div class="col-md-6 text-right">
-						<div class="phone-header">
+						<div class="header-phone">
 							<img src="<?php bloginfo('template_url'); ?>/img/phone-header.png" alt="">
 						</div>
 					</div>

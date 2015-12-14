@@ -86,7 +86,7 @@ add_filter( 'excerpt_length', 'ox_custom_excerpt_length', 999 );
 // add more link to excerpt
 function ox_custom_excerpt_more($more) {
 	global $post;
-	return '... <div class="more-btn-wrap"><a class="btn btn-default big-dark-btn more-link" href="'. get_permalink($post->ID) . '">'.'Read More' .'</a></div>';
+	return '... <div class="more-btn-wrap"><a class="btn btn-default big-btn more-link" href="'. get_permalink($post->ID) . '">'.'Read More' .'</a></div>';
 }
 add_filter('excerpt_more', 'ox_custom_excerpt_more');
 
