@@ -14,18 +14,21 @@ body {
 	margin: 0;
 	background: #eee;
 	color: #222;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: flex;
 	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	-webkit-flex-direction: column;
 	-moz-box-orient: vertical;
+	-webkit-box-direction: normal;
 	-moz-box-direction: normal;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
 	-ms-flex-direction: column;
+	-o-flex-direction: column;
 	flex-direction: column;
+	height: 100vh;
 	min-height: 100vh;
 }
 img {
@@ -73,6 +76,9 @@ blockquote {
 
 .header {
 	background: #222;
+	-webkit-flex-shrink: 0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
 }
 
 /*FIXED HEADER*/
@@ -132,6 +138,9 @@ blockquote {
 .footer {
 	background: #222;
 	padding: 40px 0;
+	-webkit-flex-shrink: 0;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
 }
 
 /*FOOTER-MENU*/
@@ -170,11 +179,11 @@ blockquote {
 
 .main {
 	margin: 40px 0;
-	-webkit-box-flex: 1;
-	-webkit-flex: 1;
-	-moz-box-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
+	-webkit-flex: 1 0 auto;
+	-moz-flex: 1 0 auto;
+	-ms-flex: 1 0 auto;
+	-o-flex: 1 0 auto;
+	flex: 1 0 auto;
 }
 .article,
 .article-text {
@@ -511,8 +520,12 @@ blockquote {
 /*SLIDER NEXT/PREV BUTTONS*/
 
 .top-slider .bx-prev,
-.top-slider .bx-next {}
-.top-slider .bx-prev {}
+.top-slider .bx-next {
+	right: 20px;
+}
+.top-slider .bx-prev {
+	left: 20px;
+}
 .top-slider .bx-next {}
 .top-slider .bx-prev:hover,
 .top-slider .bx-next:hover {}
@@ -563,8 +576,8 @@ blockquote {
 @media only screen and (max-width: 1199px) {
 	.top-slider .slider-content {
 		text-align: center;
-		padding-left: 50px;
-		padding-right: 50px;
+		padding-left: 60px;
+		padding-right: 60px;
 	}
 	.top-slider .btn-wrap {
 		text-align: center;
@@ -579,12 +592,26 @@ blockquote {
 		margin: 3% auto;
 	}
 	.footer-bottom {
+		-webkit-box-orient: vertical;
+		-moz-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-moz-box-direction: normal;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flexbox;
+		display: -o-flex;
 		display: flex;
 		-webkit-flex-direction: column;
+		-moz-flex-direction: column;
 		-ms-flex-direction: column;
+		-o-flex-direction: column;
 		flex-direction: column;
 	}
 	.footer-bottom > div:first-child {
+		-webkit-box-ordinal-group: 1;
+		-moz-box-ordinal-group: 1;
+		-ms-flex-order: 1;
+		-webkit-order: 1;
 		order: 1;
 	}
 }

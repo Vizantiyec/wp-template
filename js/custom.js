@@ -63,7 +63,6 @@ $('#bxslider').bxSlider({
 (function($){
 var fixedItem = $('#header'),
 	fixedClass = 'fixed',
-	bodyClass = 'body-margin',
 	noFixed_topScroll = fixedItem.height();
 
 if(fixedItem.size()){
