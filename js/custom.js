@@ -20,7 +20,7 @@ window.$zopim || (function(d, s) {
 
 //SLICKNAV MENU
 //-------------------------------------------------
-$('#nav').slicknav();
+$('#nav').slicknav({prependTo: '#header'});
 
 //TOP SLIDER
 //-------------------------------------------------
@@ -38,7 +38,7 @@ $('#bxslider').bxSlider({
 	function findWindowHeight(){
 		return windowHeight = $(window).height();
 	};
-	
+
 	function addScrollButton(){
 		if ($(window).scrollTop() > windowHeight && !$('#scrollButton').size()) {
 			var scrollButton = '<div id="scrollButton" class="scroll-button"/>';
@@ -47,11 +47,11 @@ $('#bxslider').bxSlider({
 			$('#scrollButton').remove();
 		}
 	};
-	
+
 	function scrollPage(){
 		$('body, html').animate({scrollTop : 0}, 800);
 	};
-	
+
 	var windowHeight = findWindowHeight();
 	$(window).scroll(addScrollButton);
 	$(window).resize(findWindowHeight);

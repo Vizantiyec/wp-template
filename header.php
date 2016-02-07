@@ -5,7 +5,7 @@
 <!--[!(IE)]><!-->
 <html><!--<![endif]-->
 	<head>
-	
+
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -13,41 +13,41 @@
 
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 		<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
-		
+
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 
 		<?php wp_head(); ?>
-		
+
 	</head>
 
 	<body <?php body_class(); ?>>
 
 		<!--HEADER-->
-		<header class="header" id="header">
+		<header class="site_header" id="header">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<div class="logo">
-							<a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="logo"/><?php bloginfo('name'); ?></a>
+						<div class="site_logo">
+							<a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="<?php bloginfo('name'); ?>"/><?php bloginfo('name'); ?></a>
 						</div>
 					</div>
 
 					<div class="col-md-6 text-right">
-						<div class="header-phone">
+						<div class="site_header-phone">
 							<img src="<?php bloginfo('template_url'); ?>/img/phone-header.png" alt="">
 						</div>
 					</div>
 				</div>
-				
-				<nav class="nav" id="nav">
+
+				<nav class="site_nav" id="nav">
 					<?php
 						$nav_args = array(
 							'theme_location'	=> 'nav',
 							'container'			=> '',
-							'link_before'		=> '<span class="link-title">',
+							'link_before'		=> '<span class="site_nav-title">',
 							'link_after'		=> '</span>',
 							'depth'				=> 1
 						);

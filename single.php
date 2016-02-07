@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!--MAIN-->
-<div class="main tpl-post">
+<div class="site_main site_tpl-post">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">

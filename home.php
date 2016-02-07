@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
 <!--MAIN-->
-<div class="main tpl-blog">
+<div class="site_main site_tpl-blog">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
 				<?php get_template_part('loop'); ?>
-				<div class="blog-pagination">
+				<div class="site_blog-pagination">
 					<?php
 						the_posts_pagination(array(
 							'show_all' => true,
