@@ -73,6 +73,12 @@ var sourcemaps = require('gulp-sourcemaps');
 //--------------------------------------------------
 gulp.task('default', ['browser-sync']);
 
+//TASK: gulp watch
+//--------------------------------------------------
+gulp.task('watch', function() {
+	gulp.watch('style.less', ['less']);
+});
+
 //TASK: gulp replace
 //--------------------------------------------------
 gulp.task('replace', function() {
@@ -90,7 +96,7 @@ gulp.task('img', function() {
 	.pipe(gulp.dest("./"));
 });
 
-//LESS
+//TASK: gulp less
 //--------------------------------------------------
 gulp.task('less', function () {
 	gulp.src('style.less')
@@ -102,14 +108,7 @@ gulp.task('less', function () {
 	.pipe(gulp.dest('./'))
 });
 
-
-//WATCH
-//--------------------------------------------------
-gulp.task('watch', function() {
-	gulp.watch('style.less', ['less']);
-});
-
-//TASK: browser-sync
+//TASK: gulp browser-sync
 //--------------------------------------------------
 //http://www.browsersync.io/docs/options/
 gulp.task('browser-sync', function() {
@@ -127,16 +126,9 @@ gulp.task('browser-sync', function() {
 	browserSync.init(files, {
 		proxy: domain,
 		//port: 8080, //default: 3000
-
-		// Tunnel the Browsersync server through a random Public URL
-		// tunnel: true,
-
-		// Attempt to use the URL "http://olgax.localtunnel.me"
-		// tunnel: "olgax",
-
-		// Inject CSS changes
-		injectChanges: true,
-
+		//tunnel: true, //tunnel the browsersync server through a random Public URL
+		//tunnel: "olgax", //attempt to use the custom URL: "http://olgax.localtunnel.me"
+		injectChanges: true, //inject CSS changes
 		notify: false
 	});
 });
