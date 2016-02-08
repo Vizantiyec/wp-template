@@ -96,7 +96,7 @@ h6 {
 /*HEADER
 -------------------------------------------------*/
 .site_header {
-  background: #023;
+  background: #111;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
@@ -135,7 +135,7 @@ h6 {
 /*FOOTER
 -------------------------------------------------*/
 .site_footer {
-  background: #023;
+  background: #111;
   padding: 40px 0;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
@@ -290,7 +290,7 @@ h6 {
   color: #222;
 }
 .site_blog-pagination .page-numbers.current {
-  background: #023;
+  background: #111;
   color: #fff;
 }
 .site_blog-pagination .screen-reader-text {
@@ -334,14 +334,14 @@ h6 {
   color: #fff !important;
 }
 /*MORE-LINK (modified "big-btn")*/
-.site_more-btn-wrap {
-  text-align: right;
-  line-height: 1;
-}
-.site_more-btn-link {
+.site_more-btn {
   padding: 5px 10px;
   font-size: 16px;
   min-width: auto;
+}
+.site_more-btn-wrap {
+  text-align: right;
+  line-height: 1;
 }
 /*SLICKNAV MENU
 -------------------------------------------------*/
@@ -465,7 +465,7 @@ h6 {
   position: relative;
   z-index: 1;
 }
-.site_top-slider .site_slider-text {
+.site_top-slider .site_slider-content {
   margin-bottom: 50px;
   color: #fff;
   font-size: 40px;
