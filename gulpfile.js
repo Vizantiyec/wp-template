@@ -18,13 +18,17 @@ gulp.task('default', ['browser-sync']);
 //TASK: gulp watch
 //--------------------------------------------------
 gulp.task('watch', function() {
-	gulp.watch('style.less', ['less']);
+	gulp.watch('./style.less', ['less']);
 });
 
 //TASK: gulp replace
 //--------------------------------------------------
 gulp.task('replace', function() {
-	gulp.src(['**/*.php', 'style.{less,css}', 'style.css.map'])
+	gulp.src([
+		'./**/*.php',
+		'./style.{less,css}',
+		'./style.css.map'
+	])
 	.pipe(replace(config.new_classes))
 	.pipe(gulp.dest("./"));
 })
@@ -32,7 +36,7 @@ gulp.task('replace', function() {
 //TASK: gulp img
 //--------------------------------------------------
 gulp.task('img', function() {
-	gulp.src(['{img,css}/**/*.{png,jpg,jpeg,gif,svg}', 'screenshot.png'])
+	gulp.src(['./{img,css}/**/*.{png,jpg,jpeg,gif,svg}', './screenshot.png'])
 	.pipe(plumber())
 	.pipe(imagemin({progressive: true}))
 	.pipe(gulp.dest("./"));
@@ -41,7 +45,7 @@ gulp.task('img', function() {
 //TASK: gulp less
 //--------------------------------------------------
 gulp.task('less', function () {
-	gulp.src('style.less')
+	gulp.src('./style.less')
 	.pipe(plumber())
 	.pipe(sourcemaps.init())
 	.pipe(less())
@@ -56,12 +60,12 @@ gulp.task('less', function () {
 gulp.task('browser-sync', function() {
 	//watch files
 	var files = [
-		'**/*.css',
-		'js/**/*.js',
-		'**/*.php',
-		'{img,css,fonts}**/*.svg',
-		'{img,css}/**/*.{png,jpg,jpeg,gif,ico}',
-		'fonts/**/*.{eot,ttf,woff,woff2}',
+		'./**/*.css',
+		'./js/**/*.js',
+		'./**/*.php',
+		'./{img,css,fonts}**/*.svg',
+		'./{img,css}/**/*.{png,jpg,jpeg,gif,ico}',
+		'./fonts/**/*.{eot,ttf,woff,woff2}',
 	];
 
 	//initialize browsersync

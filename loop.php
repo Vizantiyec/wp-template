@@ -19,14 +19,8 @@
 				</div>
 
 				<div class="site_after-article-block text-center">
-					<div class="site_steps-block hidden-xs">
-						<img src="<?php bloginfo('template_url'); ?>/img/steps.png" alt="">
-					</div>
 					<div class="site_btn-wrap">
 						<a href="javascript:void(0);" onclick="document.location.href='/order'" class="btn btn-default site_big-btn">Order</a>
-					</div>
-					<div class="site_guarantees-block hidden-xs">
-						<img src="<?php bloginfo('template_url'); ?>/img/guarantees.png" alt="">
 					</div>
 				</div>
 			<?php endif; ?>

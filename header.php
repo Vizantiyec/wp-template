@@ -16,10 +16,13 @@
 
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
 
 		<?php wp_head(); ?>
+
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
 
 	</head>
 
@@ -27,32 +30,50 @@
 
 		<!--HEADER-->
 		<header class="site_header" id="header">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="site_logo">
-							<a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="<?php bloginfo('name'); ?>"/><?php bloginfo('name'); ?></a>
+			<div class="site_header-top">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6 col-xs-8">
+							<div class="site_logo">
+								<a href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="<?php bloginfo('name'); ?>"/><?php bloginfo('name'); ?></a>
+							</div>
 						</div>
-					</div>
 
-					<div class="col-md-6 text-right">
-						<div class="site_header-phone">
-							<img src="<?php bloginfo('template_url'); ?>/img/phone-header.png" alt="">
+						<div class="col-sm-push-4 col-sm-2 col-xs-4 text-right">
+							<div class="site_sign-in-btn">
+								<a href="/order">Sign In</a>
+							</div>
 						</div>
+
+						<div class="col-sm-pull-2 col-sm-4 col-xs-12 text-right">
+							<div class="site_header-phone">
+								<img src="<?php bloginfo('template_url'); ?>/img/phone-header.png" alt="">
+							</div>
+						</div>
+
 					</div>
 				</div>
+			</div>
 
-				<nav class="site_nav" id="nav">
-					<?php
-						$nav_args = array(
-							'theme_location'	=> 'nav',
-							'container'			=> '',
-							'link_before'		=> '<span class="site_nav-title">',
-							'link_after'		=> '</span>',
-							'depth'				=> 1
-						);
-						wp_nav_menu( $nav_args );
-					?>
-				</nav>
+			<div class="site_header-bottom">
+				<div class="container">
+					<nav class="site_nav" id="nav">
+						<?php
+							$nav_args = array(
+								'theme_location'	=> 'nav',
+								'container'			=> '',
+								'depth'				=> 1
+							);
+							wp_nav_menu( $nav_args );
+						?>
+					</nav>
+					<div class="mobile-nav" id="mobile_nav"></div>
+				</div>
 			</div>
 		</header>
+
+		<?php if (is_front_page()) :
+			get_template_part('inc', 'top-block');
+		endif; ?>
+
+		<?php get_template_part('inc', 'features'); ?>
