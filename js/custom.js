@@ -21,76 +21,66 @@ window.$zopim || (function(d, s) {
 //SLICKNAV MENU
 //-------------------------------------------------
 (function($){
-    $('#nav').slicknav({prependTo: '#mobile_nav'});
+	$('#nav').slicknav({prependTo: '#mobile_nav'});
 
-    //create additional menu near slicknav menu
-    $('#mobile_nav').find('.mobile-nav-show').prependTo('#mobile_nav').wrapAll('<ul class="mobile-nav-visible" />');
+	//create additional menu near slicknav menu
+	$('#mobile_nav').find('.mobile-nav-show').prependTo('#mobile_nav').wrapAll('<ul class="mobile-nav-visible" />');
 
-    //close slicknav menu after click outside an element
-    $(document).on('click', function(event) {
-        if(!$(event.target).closest('.slicknav_menu').length && !$(event.target).is('.slicknav_menu')) {
-            if($('.slicknav_open').size()) {
-                $('#nav').slicknav('close');
-            }
-        }
-    })
+	//close slicknav menu after click outside an element
+	$(document).on('click', function(event) {
+		if(!$(event.target).closest('.slicknav_menu').length && !$(event.target).is('.slicknav_menu')) {
+			if($('.slicknav_open').size()) {
+				$('#nav').slicknav('close');
+			}
+		}
+	})
 })(jQuery);
 
 //TOP SLIDER
 //-------------------------------------------------
 (function($){
-    var topSlider = $('#top_slider');
-    
-    topSlider.bxSlider({
-        //pager: false,
-        mode: 'fade',
-        //adaptiveHeight: true,
-        pause: 10000
-    });
-    
-    function toggleAutoSlide(){
-        if (!topSlider.size()) return;
-        if ($(window).width() > 768)
-            topSlider.startAuto();
-        else topSlider.stopAuto();
-    }
+	var topSlider = $('#top_slider');
 
-    toggleAutoSlide();
-    $(window).resize(toggleAutoSlide);
+	topSlider.bxSlider({
+		mode: 'fade',
+		pause: 10000
+	});
+
+	var toggleAutoSlide = function(){
+		if (!topSlider.size()) return;
+
+		if ($(window).width() > 768) topSlider.startAuto();
+		else topSlider.stopAuto();
+	}
+
+	toggleAutoSlide();
+
+	$(window).resize(toggleAutoSlide);
 })(jQuery);
 
 //TESTIMONIALS SLIDER
 //-------------------------------------------------
 (function($){
-    var testimSlider = $('#testimonials');
-    
-    testimSlider.bxSlider({
-        controls: false,
-        slideWidth:360,
-        slideMargin: 30,
-        minSlides: 1,
-        maxSlides: 3,
-        moveSlides: 1
-        //infiniteLoop: false
-    });
-    
-//    function toggleAutoSlide(){
-//        if ($(window).width() < 768)
-//            slider.reloadSlider();
-//    }
-//
-//    toggleAutoSlide();
-//    $(window).resize(toggleAutoSlide);    
+	var testimSlider = $('#testimonials');
+
+	testimSlider.bxSlider({
+		controls: false,
+		slideWidth:360,
+		slideMargin: 30,
+		minSlides: 1,
+		maxSlides: 3,
+		moveSlides: 1
+	});
 })(jQuery);
 
 //SCROLL TOP BUTTON
 //-------------------------------------------------
 (function($){
-	function findWindowHeight(){
+	var findWindowHeight = function(){
 		return windowHeight = $(window).height();
 	};
 
-	function addScrollButton(){
+	var addScrollButton = function(){
 		if ($(window).scrollTop() > windowHeight && !$('#scrollButton').size()) {
 			var scrollButton = '<div id="scrollButton" class="scroll-button"/>';
 			$('body').append(scrollButton);
@@ -99,45 +89,46 @@ window.$zopim || (function(d, s) {
 		}
 	};
 
-	function scrollPage(){
+	var scrollPage = function(){
 		$('body, html').animate({scrollTop : 0}, 800);
 	};
 
 	var windowHeight = findWindowHeight();
+
 	$(window).scroll(addScrollButton);
 	$(window).resize(findWindowHeight);
+
 	$('body').on('click', '#scrollButton', scrollPage);
 })(jQuery);
 
 //FIXED HEADER
 //-------------------------------------------------
 (function($){
-    var fixedItem = $('#header'),
-        fixedClass = 'fixed',
-        minMarginTop;
+	var fixedItem = $('#header'),
+			fixedClass = 'fixed',
+			minMarginTop;
 
-    if(fixedItem.size()){
+	if(fixedItem.size()){
+		var scrollTopValue = function(){return $(window).scrollTop()};
 
-        var scrollTopValue = function(){return $(window).scrollTop()};
+		var toggleFixedItem = function(){
+			if ($(window).width() < 468) {
+				fixedItem.removeClass(fixedClass).css({top:-minMarginTop});
+				$('body').css({marginTop:0});
+				return;
+			};
 
-        var toggleFixedItem = function(){
-            if ($(window).width() < 468) {
-                fixedItem.removeClass(fixedClass).css({top:-minMarginTop});
-                $('body').css({marginTop:0});
-                return;
-            };
+			minMarginTop = fixedItem.height();
+			if ( scrollTopValue() > minMarginTop){
+				fixedItem.addClass(fixedClass).css({top:0});;
+				$('body').css({marginTop:minMarginTop})
+			} else {
+				fixedItem.removeClass(fixedClass).css({top:-minMarginTop});
+				$('body').css({marginTop:0});
+			}
+		}
 
-            minMarginTop = fixedItem.height();
-            if ( scrollTopValue() > minMarginTop){
-                fixedItem.addClass(fixedClass).css({top:0});;
-                $('body').css({marginTop:minMarginTop})
-            } else {
-                fixedItem.removeClass(fixedClass).css({top:-minMarginTop});
-                $('body').css({marginTop:0});
-            }
-        }
-
-        $(window).scroll(toggleFixedItem);
-        $(window).resize(toggleFixedItem);
-    }
+		$(window).scroll(toggleFixedItem);
+		$(window).resize(toggleFixedItem);
+	}
 })(jQuery);

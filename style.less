@@ -32,7 +32,7 @@
 @link_color_hover: @_c2;
 
 //CSS-classes for the created nav-menu in WP-admin:
-//'order-btn' - adds special styles for the 'Order' menu item 
+//'order-btn' - adds special styles for the 'Order' menu item
 //'mobile-nav-show' - displays menu items outside the mobile 'slicknav' menu
 
 /*!
@@ -110,9 +110,9 @@ h6 {font-size: 14px;}
 	z-index: 10000;
 	&.fixed {
 		position: fixed;
-	 	width: 100%;
-	 	transition: top 0.5s;
-	 }
+		width: 100%;
+		transition: top 0.5s;
+	}
 }
 
 /*HEADER TOP*/
@@ -240,8 +240,8 @@ h6 {font-size: 14px;}
 		border-bottom: 2px solid @_c3;
 		text-transform: uppercase;
 		text-align: center;
-        max-height: 200px;
-        overflow: auto;
+		max-height: 200px;
+		overflow: auto;
 		li{
 			display: block;
 		}
@@ -302,10 +302,10 @@ h6 {font-size: 14px;}
 	padding: 15px 0;
 	background: @features_bg;
 	color: @features_color;
-    overflow: hidden;
+	overflow: hidden;
 	&-item {
-        display: inline-block;
-        vertical-align: top;
+		display: inline-block;
+		vertical-align: top;
 		white-space: nowrap;
 		position: relative;
 		&:before {
@@ -359,10 +359,10 @@ h6 {font-size: 14px;}
 -------------------------------------------------*/
 .site_main {
 	margin: 40px 0;
-	flex: 1 0 auto;   
-    h1, h2, h3, h4, h5, h6 {
-        text-align: left;
-    }
+	flex: 1 0 auto;
+		h1, h2, h3, h4, h5, h6 {
+				text-align: left;
+		}
 }
 
 /*ARTICLE*/
@@ -430,7 +430,7 @@ h6 {font-size: 14px;}
 		margin-bottom: 5px;
 	}
 	a {
-		color:  @body_color;;
+		color:	@body_color;;
 		padding-bottom: 2px;
 		text-decoration: none;
 		transition: 0.25s;
@@ -545,28 +545,29 @@ body .bx-wrapper {
 
 /*TOP-SLIDER CONTENT*/
 .site_top-slider {
-    @btn_height: 60px;
+	@btn_height: 60px;
 	flex-shrink: 0;
 	background:@top_block_bg;
 	background-size: cover;
 	text-align: center;
 	padding: 50px 0;
 	.site_slider-content {
-        display: block;
+		display: block;
 		margin: 0 60px @btn_height+30 60px;
 		color: @top_block_color;
 		font-size: 40px;
 		overflow: hidden;
 	}
-    .site_btn-wrap {
-        margin-top: -@btn_height;
-    }
-    ul {
-        margin: 0;
-        padding: 0;
-    }
+	.site_btn-wrap {
+		margin-top: -@btn_height;
+		position: relative;
+	}
+	ul {
+		margin: 0;
+		padding: 0;
+	}
 	li{
-        list-style-type: none;
+		list-style-type: none;
 		display: none;
 		&:first-child {
 			display: block;
@@ -600,20 +601,20 @@ body .bx-wrapper {
 	padding: 15px 0;
 	background: @testimonials_bg;
 	color: @testimonials_color;
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-	li{
-        list-style-type: none;
+	ul {
+		margin: 0;
+		padding: 0;
 	}
-    &-item {
-        border: 1px solid darken(@testimonials_bg, 5%);
-        background: lighten(@testimonials_bg, 5%);
-        padding: 10px;
-        text-align: center;
-        margin: 15px auto;
-    }
+	li{
+		list-style-type: none;
+	}
+	&-item {
+		border: 1px solid darken(@testimonials_bg, 5%);
+		background: lighten(@testimonials_bg, 5%);
+		padding: 10px;
+		text-align: center;
+		margin: 15px auto;
+	}
 	&-caption {
 		margin: 0 0 0.5em 0;
 		font-weight: 700;
@@ -629,22 +630,22 @@ body .bx-wrapper {
 }
 
 /*TESTIMONIALS-SLIDER RESPONSIVE*/
-.site_testimonials .bx-wrapper {    
-    @media only screen and (min-width: 992px) {
-        .bx-controls {
-            display: none;
-        }
-    }
-    @media only screen and (max-width: 1199px) {
-        li{
-            width: 293px !important;
-        }
-    }
-    @media only screen and (max-width: 991px) {
-        li{
-            width: 345px !important;
-        }
-    }
+.site_testimonials .bx-wrapper {
+	@media only screen and (min-width: 992px) {
+		.bx-controls {
+			display: none;
+		}
+	}
+	@media only screen and (max-width: 1199px) {
+		li{
+				width: 293px !important;
+		}
+	}
+	@media only screen and (max-width: 991px) {
+		li{
+				width: 345px !important;
+		}
+	}
 }
 
 /*SCROLL TOP BUTTON
@@ -681,13 +682,13 @@ body .bx-wrapper {
 /*CUSTOM SCROLLBAR
 -------------------------------------------------*/
 ::-webkit-scrollbar {
-  width: 6px;
-  background: @_c3;
+	width: 6px;
+	background: @_c3;
 }
 ::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
-  background: @_c4;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+	background: @_c4;
 }
 
 /*RESPONSIVE

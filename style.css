@@ -646,6 +646,7 @@ body .bx-wrapper li {
 }
 .site_top-slider .site_btn-wrap {
   margin-top: -60px;
+  position: relative;
 }
 .site_top-slider ul {
   margin: 0;
