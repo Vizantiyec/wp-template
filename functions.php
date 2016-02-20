@@ -67,8 +67,9 @@ add_filter('login_errors',create_function('$a', "return null;"));
 //REGISTRATION MENU
 //--------------------------------------------------
 register_nav_menus( array(
-	'nav' => 'Primary Menu',
-	'second' => 'Second Menu',
+	'nav' => 'Navigaton',
+	'footer' => 'Footer Menu',
+	'footer2' => 'Footer Menu (second)',
 ));
 
 //REGISTRATION SIDEBAR

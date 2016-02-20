@@ -4,11 +4,11 @@
 		<footer class="site_footer">
 			<div class="site_footer-top">
 				<div class="container">
-					<?php if (has_nav_menu('second')) : ?>
+					<?php if (has_nav_menu('footer')) : ?>
 						<div class="site_footer-menu">
 							<?php
 								$nav_args = array(
-									'theme_location'	=> 'second',
+									'theme_location'	=> 'footer',
 									'container'			=> '',
 									'depth'				=> 1
 								);
@@ -18,7 +18,7 @@
 					<?php endif; ?>
 				</div>
 			</div>
-			<div class="site_footer-bottom">
+			<div class="site_footer-center">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-4">
@@ -31,6 +31,22 @@
 							<div class="site_footer-phone"><img src="<?php bloginfo('template_url'); ?>/img/phone-footer.png" alt=""></div>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div class="site_footer-bottom">
+				<div class="container">
+					<?php if (has_nav_menu('footer2')) : ?>
+						<div class="site_footer-terms">
+							<?php
+								$nav_args = array(
+									'theme_location'	=> 'footer2',
+									'container'			=> '',
+									'depth'				=> 1
+								);
+								wp_nav_menu( $nav_args );
+							?>
+						</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</footer>

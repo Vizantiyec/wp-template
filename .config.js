@@ -21,24 +21,27 @@ var config = {
 		//FOOTER
 		['site_footer', _+'footer'],
 		['site_footer-top', _+'footer-top'],
+		['site_footer-center', _+'footer-center'],
 		['site_footer-bottom', _+'footer-bottom'],
 
+		['site_footer-menu', _+'footer-menu'],
 		['site_copyright', _+'copyright'],
 		['site_payments', _+'payments'],
 		['site_footer-phone', _+'footer-phone'],
+		['site_footer-terms', _+'footer-terms'],
 
 		//TOP-BLOCK (slider)
 		['site_top-slider', _+'top-slider'],
 		['site_slider-content-wrap', _+'slider-content-wrap'],
 		['site_slider-content', _+'slider-content'],
-		
+
 		//FEATURES
 		['site_features', _+'features'],
 		['site_features-item', _+'features-item'],
 		['site_features-text', _+'features-text'],
 		['site_features-title', _+'features-title'],
 		['site_features-text', _+'features-text'],
-		
+
 		//TESTIMONIALS
 		['site_testimonials', _+'testimonials'],
 		['site_testimonials-item', _+'testimonials-item'],
@@ -58,6 +61,7 @@ var config = {
 		['site_tpl-post', _+'tpl-post'], //single.php
 		['site_tpl-404', _+'tpl-404'], //404.php
 		['site_tpl-full-width-page', _+'tpl-full-width-page'], //full-width-page.php
+		['site_tpl-order-page', _+'tpl-order-page'], //order-page.php
 
 		['site_main', _+'main'],
 		['site_article', _+'article'],

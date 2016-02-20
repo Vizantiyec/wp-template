@@ -32,7 +32,7 @@
 @link_color_hover: @_c2;
 
 //CSS-classes for the created nav-menu in WP-admin:
-//'order-btn' - adds special styles for the 'Order' menu item
+//'nav-order' - adds special styles for the 'Order' menu item
 //'mobile-nav-show' - displays menu items outside the mobile 'slicknav' menu
 
 /*!
@@ -262,7 +262,7 @@ h6 {font-size: 14px;}
 	background: @footer_bg;
 	padding: 20px 0 35px 0;
 	flex-shrink: 0;
-	&-top {
+	&-top, &-center {
 		margin-bottom: 15px;
 	}
 }
@@ -289,9 +289,27 @@ h6 {font-size: 14px;}
 	}
 }
 
+/*FOOTER-TERMS*/
+.site_footer-terms {
+	ul {
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+	li {
+		list-style-type: none;
+		display: inline-block;
+		margin: 5px;
+	}
+	a {
+		font-size: 13px;
+		color: darken(@footer_color, 10%);
+	}
+}
+
 /*COPYRIGHT*/
 .site_copyright {
-	font-size: 0.8rem;
+	font-size: 13px;
 	color: darken(@footer_color, 10%);
 }
 
@@ -467,7 +485,7 @@ h6 {font-size: 14px;}
 		display: inline-block;
 		text-decoration: none;
 		padding: 2px 7px;
-		font-size: 1.5rem;
+		font-size: 18px;
 		&:hover,&:active, &:focus, &.current {
 			color: @body_color;
 		}
@@ -683,6 +701,7 @@ body .bx-wrapper {
 -------------------------------------------------*/
 ::-webkit-scrollbar {
 	width: 6px;
+	height: 6px;
 	background: @_c3;
 }
 ::-webkit-scrollbar-thumb {
@@ -700,7 +719,7 @@ body .bx-wrapper {
 		text-align: center;
 		margin: 5px auto;
 	}
-	.site_footer-bottom .row{
+	.site_footer-center .row{
 		display: flex;
 		flex-direction: column;
 		> div:first-child {
