@@ -1,5 +1,3 @@
-		<?php get_template_part('inc', 'testimonials'); ?>
-
 		<!--FOOTER-->
 		<footer class="site_footer">
 			<div class="site_footer-top">
@@ -22,7 +20,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-4">
-							<div class="site_copyright">Copyright &copy; <?php echo date("Y"); ?> - <?php bloginfo('name'); ?></div>
+							<div class="site_copyright">Copyright &copy; 2015 - <?php echo date("Y"); ?>, <?php bloginfo('name'); ?><br/> All rights reserved.</div>
 						</div>
 						<div class="col-md-4 text-center">
 							<div class="site_payments"><img src="<?php bloginfo('template_url'); ?>/img/cards.png" alt=""></div>

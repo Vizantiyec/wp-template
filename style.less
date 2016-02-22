@@ -191,8 +191,7 @@ h6 {font-size: 14px;}
 /*NAV-ORDER BUTTON*/
 .nav-order {
 	a {
-		color: @link_color;
-		font-weight: 700;
+		border: 1px solid @link_color;
 		&:hover, &:active, &:focus {
 			color: lighten(@header_color, 10%);
 		}
@@ -622,6 +621,7 @@ body .bx-wrapper {
 	ul {
 		margin: 0;
 		padding: 0;
+		li:before {content: none;}
 	}
 	li{
 		list-style-type: none;

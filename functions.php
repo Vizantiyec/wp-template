@@ -104,3 +104,20 @@ add_filter('excerpt_more', 'ox_custom_excerpt_more');
 add_theme_support('post-thumbnails');
 set_post_thumbnail_size(180, 180, true);
 */
+
+//SHORTCODE -> Testimonials [testimonials]
+//--------------------------------------------------
+function add_testimonials_shortcode($attr, $content = null){
+	function get_testimonials_template() {
+		ob_start();
+		get_template_part('shortcode', 'testimonials');
+		return ob_get_clean();
+	}
+
+	$result = '</div></div></div>'
+	. get_testimonials_template()
+	. '<div class="container"><div class="site_article"><div class="site_article-text text-justify">' ;
+
+	return $result;
+}
+add_shortcode('testimonials', add_testimonials_shortcode);

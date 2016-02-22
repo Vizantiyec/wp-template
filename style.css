@@ -210,8 +210,7 @@ h6 {
 }
 /*NAV-ORDER BUTTON*/
 .nav-order a {
-  color: #dd5353;
-  font-weight: 700;
+  border: 1px solid #dd5353;
 }
 .nav-order a:hover,
 .nav-order a:active,
@@ -701,6 +700,9 @@ body .bx-wrapper li {
 .site_testimonials ul {
   margin: 0;
   padding: 0;
+}
+.site_testimonials ul li:before {
+  content: none;
 }
 .site_testimonials li {
   list-style-type: none;
