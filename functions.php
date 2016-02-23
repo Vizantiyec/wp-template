@@ -110,7 +110,7 @@ set_post_thumbnail_size(180, 180, true);
 function add_testimonials_shortcode($attr, $content = null){
 	function get_testimonials_template() {
 		ob_start();
-		get_template_part('shortcode', 'testimonials');
+		get_template_part('inc', 'testimonials');
 		return ob_get_clean();
 	}
 

@@ -38,7 +38,7 @@ var config = {
 		//FEATURES
 		['site_features', _+'features'],
 		['site_features-item', _+'features-item'],
-		['site_features-text', _+'features-text'],
+		['site_features-content-wrap', _+'features-content-wrap'],
 		['site_features-title', _+'features-title'],
 		['site_features-text', _+'features-text'],
 
@@ -68,15 +68,13 @@ var config = {
 		['site_article-title', _+'article-title'],
 		['site_article-text', _+'article-text'],
 		['site_after-article-block', _+'after-article-block'],
-		['site_steps-block', _+'steps-block'],
-		['site_guarantees-block', _+'guarantees-block'],
 		['site_blog-pagination', _+'blog-pagination'],
 
 		['site_btn-wrap', _+'btn-wrap'],
 		['site_big-btn', _+'big-btn'],
 		['site_more-btn-wrap', _+'more-btn-wrap'],
-		['site_more-btn', _+'more-btn'],
+		['site_more-btn', _+'more-btn']
 	]
-}
+};
 
 module.exports = config;
