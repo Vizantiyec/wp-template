@@ -46,7 +46,7 @@
 						</div>
 
 						<div class="col-sm-pull-2 col-sm-4 col-xs-12 text-right">
-							<div class="site_header-phone">
+							<div class="site_h-phone">
 								<img src="<?php bloginfo('template_url'); ?>/img/phone-header.png" alt="">
 							</div>
 						</div>

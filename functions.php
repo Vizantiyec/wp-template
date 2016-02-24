@@ -1,4 +1,5 @@
 <?php
+$order_form_pages = array('prices', 'order', 'preview');
 //ADDING JS AND CSS FILES
 //--------------------------------------------------
 function ox_adding_scripts() {
@@ -14,7 +15,7 @@ function ox_adding_scripts() {
 
 		/*jquery*/
 		wp_deregister_script('jquery');
-		$infooter = !is_page(array('prices', 'preise')) ? true : false;
+		$infooter = !is_page(array($order_form_pages)) ? true : false;
 		wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"), false, '1.11.3', $infooter);
 		wp_enqueue_script('jquery');
 
@@ -105,19 +106,27 @@ add_theme_support('post-thumbnails');
 set_post_thumbnail_size(180, 180, true);
 */
 
-//SHORTCODE -> Testimonials [testimonials]
+//ADDING TESTIMONIALS IN CONTENT
 //--------------------------------------------------
-function add_testimonials_shortcode($attr, $content = null){
-	function get_testimonials_template() {
-		ob_start();
-		get_template_part('inc', 'testimonials');
-		return ob_get_clean();
-	}
+function get_testimonials_template() {
+	ob_start();
+	get_template_part('inc', 'testimonials');
+	return ob_get_clean();
+}
 
-	$result = '</div></div></div>'
-	. get_testimonials_template()
-	. '<div class="container"><div class="site_article"><div class="site_article-text text-justify">' ;
+function add_testimonials($content) {
+	global $order_form_pages;
+	if(!is_page() || is_page($order_form_pages)) return $content;
 
+	$testimonials = get_testimonials_template();
+
+	$tmp = $content;
+	$tmp = explode('</p>',$content);
+	$middle_content = round(count($tmp)/2);
+	while (strstr($tmp[$middle_content],'</blockquote>')) $middle_content++;
+	array_splice($tmp, $middle_content, 0, $testimonials );
+	$result = implode("",$tmp);
 	return $result;
 }
-add_shortcode('testimonials', add_testimonials_shortcode);
+
+add_filter( 'the_content', 'add_testimonials');

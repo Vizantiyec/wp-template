@@ -49,7 +49,7 @@
 						</div>
 
 						<div class="col-sm-pull-2 col-sm-4 col-xs-12 text-right">
-							<div class="site_header-phone">
+							<div class="site_h-phone">
 								<img src="<?php bloginfo('template_url'); ?>/img/phone-header.png" alt="">
 							</div>
 						</div>
@@ -86,7 +86,7 @@
 							<div class="site_payments"><img src="<?php bloginfo('template_url'); ?>/img/cards.png" alt=""></div>
 						</div>
 						<div class="col-md-4 text-right">
-							<div class="site_footer-phone"><img src="<?php bloginfo('template_url'); ?>/img/phone-footer.png" alt=""></div>
+							<div class="site_f-phone"><img src="<?php bloginfo('template_url'); ?>/img/phone-footer.png" alt=""></div>
 						</div>
 					</div>
 				</div>
@@ -94,7 +94,7 @@
 			<div class="site_footer-bottom">
 				<div class="container">
 					<?php if (has_nav_menu('footer2')) : ?>
-						<div class="site_footer-terms">
+						<div class="site_terms">
 							<?php
 								$nav_args = array(
 									'theme_location'	=> 'footer2',

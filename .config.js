@@ -1,5 +1,5 @@
 //CSS PREFIX
-var _ = 'my_';
+var _ = 'site_';
 
 var config = {
 	//LOCAL DOMAIN
@@ -9,49 +9,32 @@ var config = {
 	new_classes : [
 		//HEADER
 		['site_header', _+'header'],
-		['site_header-top', _+'header-top'],
-		['site_header-bottom', _+'header-bottom'],
-
 		['site_logo', _+'logo'],
-		['site_header-phone', _+'header-phone'],
+		['site_h-phone', _+'h-phone'],
 		['site_sign-in-btn', _+'sign-in-btn'],
 		['site_nav', _+'nav'],
 		['site_mobile-nav', _+'mobile-nav'],
 
 		//FOOTER
 		['site_footer', _+'footer'],
-		['site_footer-top', _+'footer-top'],
-		['site_footer-center', _+'footer-center'],
-		['site_footer-bottom', _+'footer-bottom'],
-
-		['site_footer-menu', _+'footer-menu'],
+		['site_f-menu', _+'f-menu'],
+		['site_f-phone', _+'f-phone'],
 		['site_copyright', _+'copyright'],
 		['site_payments', _+'payments'],
-		['site_footer-phone', _+'footer-phone'],
-		['site_footer-terms', _+'footer-terms'],
+		['site_terms', _+'terms'],
 
 		//TOP-BLOCK (slider)
 		['site_top-slider', _+'top-slider'],
-		['site_slider-content-wrap', _+'slider-content-wrap'],
-		['site_slider-content', _+'slider-content'],
 
 		//FEATURES
 		['site_features', _+'features'],
-		['site_features-item', _+'features-item'],
-		['site_features-content-wrap', _+'features-content-wrap'],
-		['site_features-title', _+'features-title'],
-		['site_features-text', _+'features-text'],
 
 		//TESTIMONIALS
 		['site_testimonials', _+'testimonials'],
-		['site_testimonials-item', _+'testimonials-item'],
-		['site_testimonials-caption', _+'testimonials-caption'],
-		['site_testimonials-text', _+'testimonials-text'],
 
 		//SIDEBAR
 		['site_sidebar', _+'sidebar'],
 		['site_widget', _+'widget'],
-		['site_widget-title', _+'widget-title'],
 
 		//MAIN
 		['site_tpl-index', _+'tpl-index'], //index.php
@@ -65,14 +48,9 @@ var config = {
 
 		['site_main', _+'main'],
 		['site_article', _+'article'],
-		['site_article-title', _+'article-title'],
-		['site_article-text', _+'article-text'],
-		['site_after-article-block', _+'after-article-block'],
 		['site_blog-pagination', _+'blog-pagination'],
 
-		['site_btn-wrap', _+'btn-wrap'],
 		['site_big-btn', _+'big-btn'],
-		['site_more-btn-wrap', _+'more-btn-wrap'],
 		['site_more-btn', _+'more-btn']
 	]
 };

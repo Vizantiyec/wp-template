@@ -131,12 +131,10 @@ h6 {
   -o-transition: top 0.5s;
   transition: top 0.5s;
 }
-/*HEADER TOP*/
 .site_header-top {
   padding: 5px 0;
   background: #191919;
 }
-/*HEADER BOTTOM*/
 .site_header-bottom {
   border-bottom: 2px solid #191919;
   background: #333333;
@@ -151,12 +149,12 @@ h6 {
 .site_logo a:focus {
   color: #d4d4d4;
 }
-/*HEADER PHONE*/
-.site_header-phone {
+/*HEADER-PHONE*/
+.site_h-phone {
   padding-top: 10px;
   clear: both;
 }
-/*SIGN IN BUTTON*/
+/*SIGN-IN BUTTON*/
 .site_sign-in-btn {
   margin-top: 5px;
 }
@@ -286,38 +284,38 @@ h6 {
   margin-bottom: 15px;
 }
 /*FOOTER-MENU*/
-.site_footer-menu ul {
+.site_f-menu ul {
   margin: 0;
   padding: 0;
   text-align: center;
 }
-.site_footer-menu li {
+.site_f-menu li {
   list-style-type: none;
   display: inline-block;
   margin: 5px;
 }
-.site_footer-menu a {
+.site_f-menu a {
   color: #bbb;
 }
-.site_footer-menu a:hover,
-.site_footer-menu a:focus,
-.site_footer-menu a:active,
-.site_footer-menu .current-menu-item a,
-.site_footer-menu .current_page_item a {
+.site_f-menu a:hover,
+.site_f-menu a:focus,
+.site_f-menu a:active,
+.site_f-menu .current-menu-item a,
+.site_f-menu .current_page_item a {
   color: #d4d4d4;
 }
-/*FOOTER-TERMS*/
-.site_footer-terms ul {
+/*TERMS*/
+.site_terms ul {
   margin: 0;
   padding: 0;
   text-align: center;
 }
-.site_footer-terms li {
+.site_terms li {
   list-style-type: none;
   display: inline-block;
   margin: 5px;
 }
-.site_footer-terms a {
+.site_terms a {
   font-size: 13px;
   color: #a2a2a2;
 }
@@ -394,6 +392,7 @@ h6 {
 }
 .site_features-title {
   margin: 0;
+  font-size: 16px;
   font-weight: 700;
 }
 @-webkit-keyframes spinner {
@@ -460,9 +459,7 @@ h6 {
 }
 .site_article .site_btn-wrap {
   margin: 30px 0;
-}
-.site_after-article-block {
-  margin: 30px 0;
+  text-align: center;
 }
 /*LIST ITEMS*/
 .site_main ol,
@@ -617,7 +614,7 @@ h6 {
   text-align: right;
   line-height: 1;
 }
-/*TOP BLOCK (SLIDER)
+/*TOP-BLOCK (SLIDER)
 -------------------------------------------------*/
 /*BX-SLIDER FIX (rewriting plugin styles)*/
 body .bx-wrapper {
@@ -652,7 +649,7 @@ body .bx-wrapper li {
   text-align: center;
   padding: 50px 0;
 }
-.site_top-slider .site_slider-content {
+.site_top-slider-content {
   display: block;
   margin: 0 60px 90px 60px;
   color: #eee;
@@ -694,8 +691,6 @@ body .bx-wrapper li {
       -ms-flex-negative: 0;
           flex-shrink: 0;
   padding: 15px 0;
-  background: #e2e2e2;
-  color: #222;
 }
 .site_testimonials ul {
   margin: 0;
@@ -708,11 +703,11 @@ body .bx-wrapper li {
   list-style-type: none;
 }
 .site_testimonials-item {
-  border: 1px solid #d5d5d5;
-  background: #efefef;
-  padding: 10px;
-  text-align: center;
   margin: 15px auto;
+  padding: 10px;
+  border: 1px solid #d5d5d5;
+  background: #e2e2e2;
+  color: #222;
 }
 .site_testimonials-caption {
   margin: 0 0 0.5em 0;
@@ -739,7 +734,7 @@ body .bx-wrapper li {
     width: 345px !important;
   }
 }
-/*SCROLL TOP BUTTON
+/*SCROLL-TOP BUTTON
 -------------------------------------------------*/
 .scroll-button {
   position: fixed;
@@ -781,7 +776,7 @@ body .bx-wrapper li {
 @media only screen and (max-width: 991px) {
   .site_payments,
   .site_copyright,
-  .site_footer-phone {
+  .site_f-phone {
     text-align: center;
     margin: 5px auto;
   }
